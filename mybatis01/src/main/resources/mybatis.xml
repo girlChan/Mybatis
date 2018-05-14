@@ -21,6 +21,7 @@
 	<!-- 注册xml文件 -->
 	<mappers>
 		<!-- 注册Mapper.xml文件 -->
-		<package name="/mybatis01/src/main/java/Dao/mapper.xml" />
+		<mapper resource="/mybatis01/src/main/java/Dao/IStudentDao.xml" />
+
 	</mappers>
 </configuration>
