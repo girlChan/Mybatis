@@ -9,4 +9,5 @@ public interface IStudentDao {
 
 	List<Student> selectStudentMap(Map<String, Object> map);
 	List<Student> selectStudentByConditions(int age,String name);
+	List<Student> selectStudentIf(Student student);
 }

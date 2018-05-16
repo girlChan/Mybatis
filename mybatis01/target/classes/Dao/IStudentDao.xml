@@ -8,8 +8,39 @@
 	</select>
 	<select id="selectStudentMap" resultType="Student">
 		select * from
-		student where name like "%" #{name} "%" and age > #{age};
+		student
+		where name like "%" #{name} "%" and age > #{age};
 	</select>
 
+	<select id="selectStudentIf" resultType="Student">
+		select * from
+		student
+		where 1=1
+		<if test=" name ! =null and name ! =''">
+			and name like "%" #{name} "%"
+		</if>
+		<if test="age>0">
+			and age> #{age};
+		</if>
+	</select>
+</mapper>
+
+<mapper namespace="Dao.ISomeDao">
+	<resultMap type="Country" id="countryMapper">
+		<id column="cid" property="cid" />
+		<result column="cname" property="cname" />
+		<collection property="ministers" ofType=Minister ">
+			<id column="mid" property="mid" />
+			<result column="mname" property="mname" />
+		</collection>
+	</resultMap>
+
+	<select id="selectCountryById" resultMap="countryMapper">
+		select
+		cid,cname,mid,mname
+		from country,minister
+		where cid=#{xxx} and
+		cid=countryId
+	</select>
 </mapper>
  
