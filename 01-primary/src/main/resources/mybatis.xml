@@ -3,8 +3,11 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<!-- 读入properties配置文件 -->
+	<properties resource="jdbc.properties">
+	</properties>
 	<!-- 配置运行环境 -->
-	<environments default="mysqlEM">
+	<environments default="onlineEM">
 		<environment id="onlineEM">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
@@ -14,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 				<property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
-		
+
 		<environment id="testEM">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">

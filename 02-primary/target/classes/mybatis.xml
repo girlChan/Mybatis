@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 				<property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
-
+		
 		<environment id="testEM">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
