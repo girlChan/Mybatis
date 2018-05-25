@@ -31,6 +31,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 注册映射文件 -->
 	<mappers>
-		<mapper resource="/01-primary/src/main/java/cn/liuchan/Dao/mapper.xml" />
+		<mapper resource="cn/liuchan/Dao/mapper.xml" />
 	</mappers>
 </configuration>

@@ -20,7 +20,7 @@ public class MyTest {
 
 	@Test
 	public void test01() {
-		Student student = new Student("zhangsan", 12, 99.3);
+		Student student = new Student("李四", 12, 99.3);
 		studentDao.insertStudent(student);
 	}
 }
