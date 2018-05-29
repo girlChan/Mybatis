@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 读入properties配置文件 -->
+	<properties resource="jdbc.properties">
+	</properties>
+	<!-- 定义类型别名 -->
+	<typeAliases>
+		<!-- <typeAlias type="cn.liuchan.Do.Student" alias="Student" /> -->
+		<!-- 将指定包中的所有简单类名当做别名 -->
+		<package name="cn.liuchan.Do" />
+	</typeAliases>
+	<!-- 配置运行环境 -->
+	<environments default="onlineEM">
+		<environment id="onlineEM">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+
+		<environment id="testEM">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 注册映射文件 -->
+	<mappers>
+		<mapper resource="cn/liuchan/Dao/mapper.xml" />
+	</mappers>
+</configuration>
